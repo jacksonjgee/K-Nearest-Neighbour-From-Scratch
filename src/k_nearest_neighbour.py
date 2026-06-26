@@ -9,6 +9,9 @@ class KNN:
             "Blue": [[7, 8], [9, 6], [8, 6], [9, 8]]
         }
 
+    def get_data(self):
+        return self.points
+
     def euclidean_distance(self, p, q):
         return np.sqrt(np.sum(np.square(np.array(p) - np.array(q))))
 
