@@ -7,7 +7,6 @@ This project demonstrates how KNN works internally by manually calculating Eucli
 The project also includes visualisations showing how different values of `k` affect the decision boundary and can change how new points are classified.
 
 I created a short guide explaining the mathematical theory behind KNN and how I implemented the algorithm from scratch in Python.
-
 [Read more about the theory and implementation guide](#theory-and-implementation-guide)
 
 ## How It Works

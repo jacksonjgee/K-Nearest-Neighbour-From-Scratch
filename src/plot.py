@@ -47,22 +47,43 @@ class Plot:
             X=X,
             y=y,
             clf=self.model,
-            legend=2
+            legend=0
         )
 
-        plt.scatter(red[:, 0], red[:, 1], s=75, color="red", marker="o", edgecolor="black", label="Red Points", zorder=3)
-        plt.scatter(blue[:, 0], blue[:, 1], s=75, color="blue", marker="o", edgecolor="black", label="Blue Points", zorder=3)
+        plt.scatter(
+            red[:, 0],
+            red[:, 1],
+            s=75,
+            color="red",
+            marker="o",
+            edgecolor="black",
+            zorder=3
+        )
+
+        plt.scatter(
+            blue[:, 0],
+            blue[:, 1],
+            s=75,
+            color="blue",
+            marker="o",
+            edgecolor="black",
+            zorder=3
+        )
 
         if new_point is not None:
-            plt.scatter(
+            new_point_plot = plt.scatter(
                 new_point[0],
                 new_point[1],
                 s=150,
                 color="grey",
                 marker="*",
                 edgecolor="black",
-                label="New Point",
                 zorder=4
+            )
+
+            plt.legend(
+                handles=[new_point_plot],
+                labels=["New Point"]
             )
 
         plt.xlabel("Feature 1")
@@ -70,5 +91,5 @@ class Plot:
         plt.title("KNN Decision Boundary: k = 3")
         plt.grid(True, alpha=0.3, zorder=0)
 
-        plt.savefig("assets/knn-decision-boundary-k3-simple.png", dpi=300, bbox_inches="tight")
+        plt.savefig("assets/knn-decision-boundary-k3.png", dpi=300, bbox_inches="tight")
         plt.show()
