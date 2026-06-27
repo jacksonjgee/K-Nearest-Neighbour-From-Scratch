@@ -29,4 +29,13 @@ class KNN:
 
         result = Counter(categories).most_common(1)
 
-        return 1 if (result[0][0] == "Red") else 0
+        return 1 if result[0][0] == "Red" else 0
+
+    def predict(self, X):
+        predictions = []
+
+        for point in X:
+            prediction = self.fit(point)
+            predictions.append(prediction)
+
+        return np.array(predictions)
