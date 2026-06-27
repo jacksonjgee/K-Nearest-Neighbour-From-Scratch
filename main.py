@@ -6,3 +6,4 @@ k = 3
 model = KNN(3)
 print(model.fit(new_point))
 plot = Plot(model)
+plot.plot_points(new_point)

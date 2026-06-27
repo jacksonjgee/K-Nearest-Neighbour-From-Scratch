@@ -6,7 +6,7 @@ class KNN:
         self.k = k
         self.points = {
             "Red": [[1, 2], [3, 2], [1, 1], [4, 2], [2, 4]],
-            "Blue": [[7, 8], [9, 6], [8, 6], [9, 8]]
+            "Blue": [[7, 8], [9, 6], [8, 6], [9, 8], [7.5, 8]]
         }
 
     def get_data(self):
@@ -29,4 +29,4 @@ class KNN:
 
         result = Counter(categories).most_common(1)
 
-        return result[0][0]
+        return 1 if (result[0][0] == "Red") else 0
